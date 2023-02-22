@@ -9,4 +9,8 @@ def image_conversions(img): # takes the image, gets values, makes it gray and th
     w = img.shape[1]
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     arr = np.array(gray)
+    return arr, h, w
 
+def clean(arr): # denoiser, may change to make my own if i can be botherd (i cant)
+    img = cv2.fastNlMeansDenoising(arr, None, 10, 7, 21)
+    return img
