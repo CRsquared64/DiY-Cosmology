@@ -15,3 +15,10 @@ def fastCv2StarlessPrediction(img,adaptive_method, block, c): # all of this code
     contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     x, y, w, h = cv2.boundingRect(contours[0])
     return w
+
+def precroppedDetection(img): # method if image is already cropped/w is already known
+    w = img.shape[1]
+    return w
+
+def yoloGalaxyDetection(): # empty for now
+    pass
