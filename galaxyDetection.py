@@ -3,7 +3,7 @@
 #https://github.com/CRsquared64/Galaxy-Detection
 import cv2
 
-def fastCv2StarlessPrediction(img,adaptive_method, block, c): # all of this code seems extermelly unessecary, but we prevail
+def fastCv2StarlessPrediction(img,adaptive_method, block, c): # all of this code seems extermelly unnecessary, but we prevail
     if adaptive_method == '1':
         adaptive_method = cv2.ADAPTIVE_THRESH_MEAN_C
     elif adaptive_method == '2':
