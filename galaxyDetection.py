@@ -29,7 +29,7 @@ def fastCv2MaskPrediction(img, thresh): # no stars pretty please
     largest_component_mask = (labels == largest_component_label).astype(np.uint8) * 255
     cv2.imshow("Isolated", largest_component_mask)
     cv2.imwrite("isolated_mask.png", largest_component_mask)
-    cv2.waitKey(0)
+    # cv2.waitKey(0)
     cv2.destroyAllWindows()
     return largest_component_mask
 

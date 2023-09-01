@@ -1,11 +1,10 @@
 # angular size and actual size (estimation) to distance :)
-def distanceIni(pixel_scale,bound_file, denoise=False):
-    pass
+def GetGalaxySizeFromArray(w, pixel_scale): # longer names sound more professional, right?
+    angular_size = (w / pixel_scale) / 3600 # in degrees
+    return angular_size
 
-def GetGalaxySizeFromArray(img, bound): # longer names sound more professional, right?
-    # use galaxy detection to draw boundrays right?
-    pass
+def GetGalaxyDistanceFromSize(angular_size, size): # size in parsecs
+    distance = (size / angular_size) / 3.086
+    print(distance, " Estimated Distance In Light Years")
 
-def GetGalaxyDistanceFromSize():
-    pass
 
