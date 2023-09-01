@@ -19,6 +19,15 @@ def fastCv2StarlessPrediction(img,adaptive_method, block, c): # all of this code
 def precroppedDetection(img): # method if image is already cropped/w is already known
     w = img.shape[1]
     return w
+def fastCv2MaskPrediction(img):
+    cv2.imshow("Grey", img)
+    thresh = 25
+    thresh_m = cv2.THRESH_BINARY
+    _, result = cv2.threshold(img, thresh, 255, thresh_m) # anything less then thresh becomes white 255
+    cv2.imshow("Thresh", result)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
 
 def yoloGalaxyDetection(): # empty for now
     pass
