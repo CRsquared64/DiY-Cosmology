@@ -1,6 +1,7 @@
+import PIL.ImageFilter
 import cv2
 import numpy as np
-from PIL import Image, ImageEnhance
+from PIL import Image, ImageEnhance, ImageFilter
 
 # going to include comments from now on, i have evolved
 def load_image(filepath):  # function to load image... wow
@@ -22,9 +23,17 @@ def image_contrast(img, factor):
     img = np.array(img)
     return img
 
+def to_img(arr):
+    return Image.fromarray(np.uint8(arr))
+
+def to_arr(img):
+    return np.array(img)
 
 
+def clean(arr, factor):  # denoiser, may change to make my own if i can be botherd (i cant)
+    # img = cv2.fastNlMeansDenoising(arr, None, 10, 7, 21)
+    img = to_img(arr)
+    img = img.filter(ImageFilter.MedianFilter(size=factor))
+    img = to_arr(img)
 
-def clean(arr):  # denoiser, may change to make my own if i can be botherd (i cant)
-    img = cv2.fastNlMeansDenoising(arr, None, 10, 7, 21)
     return img
